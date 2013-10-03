@@ -1,0 +1,40 @@
+#!/bin/bash
+REM=( "*.txt" "*.anl" "*.flt" "-r imageoutput" "*.g" "*.pix" "front" "side" "top" "iso" "*.log" "*.png" )
+
+VIEW=( "front" "side" "top" "iso" )
+
+for ((i=3; i<=12; i++ ))
+do
+	rm ${REM[$i]}
+done
+mkdir outputs
+chmod -R 777 outputs
+mkdir outputs/output_$1
+mkdir outputs/output_$1/images
+
+env /usr/brlcad/bin/mged -c outputs/output_$1/database_$1.g < work_$1.txt
+/usr/local/bin/felt felt_$1.flt > outputs/output_$1/analysis_$1.txt
+echo $1
+
+
+for ((i=0; i<=3; i++ ))
+do
+	sed '2cenv /usr/brlcad/bin/rt -C255/255/200 -M \\' ${VIEW[$i]} > tempFile$i
+	rm ${VIEW[$i]}
+	mv tempFile$i ${VIEW[$i]}
+	chmod 777 ${VIEW[$i]}
+	./${VIEW[$i]}
+	env /usr/brlcad/bin/pix-png < ${VIEW[$i]}.pix > ${VIEW[$i]}.png
+	chmod 777 ${VIEW[$i]}.png
+	cp ${VIEW[$i]}.png outputs/output_$1/images/
+done
+
+mv felt_$1.flt outputs/output_$1/
+mv work_$1.txt outputs/output_$1/
+mv stad_$1.anl outputs/output_$1/
+
+
+for ((i=5; i<=12; i++ ))
+do
+	rm ${REM[$i]}
+done

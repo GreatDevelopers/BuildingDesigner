@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="formlayout.css" media="screen" rel="stylesheet" type="text/css" />
+<title>Building Maker</title>
+</head>
+<body>
+	<center>
+	<h1> BUILDING MAKER </h1>
+	<form action="process.php" method="POST">
+		<h3>Number Of Rooms @ Height, length and width respectively</h3>
+		<table>
+		<tr><td>Project Name </td><td> <input type="text" value = "sample" name ="name"></td></tr>
+		<tr><td>Height Span </td><td> <input type="text" value = "7@5000" name ="heightspan"></td></tr>
+		<tr><td>Length Span</td><td><input type="text" value = "3@3000" name ="lengthspan"></td></tr>
+		<tr><td>Width Span</td><td><input type="text" value = "4@3000" name ="widthspan"></td></tr>
+		</table><h3>Column Data</h3><table width = "400">
+		<tr><td>IF ROUND COLUMNS</td></tr>
+		<tr><td>Radius of Column</td><td><input type="text" value = "200" name ="colrad"></td></tr>
+		<tr><td>IF RECTANGULAR COLUMNS</td></tr>
+		<tr><td>Length of Column</td><td> <input type="text" value = "" name ="collength"></td></tr>
+		<tr><td>Width of Column</td><td> <input type="text" value = "" name ="colwidth"></td></tr>
+		</table><h3>Beam Data</h3><table>
+		<tr><td>Depth of Beam</td><td> <input type="text" value = "400" name ="depthofbeam"></td></tr>
+		<tr><td>Width of Beam</td><td> <input type="text" value = "400" name ="widthofbeam"></td></tr>
+		</table><h3>Slab Data</h3><table>
+		<tr><td>Slab Thickness</td><td> <input type="text" value = "20" name ="slabthickness"></td></tr>
+		</table><h3>Pinth Data</h3><table>
+		<tr><td>Pinth Height</td><td> <input type="text" value = "500" name ="pinthheight"></td></tr>
+		</table><h3>Foundation Data</h3><table>
+		<tr><td>Foundation Height</td><td> <input type="text" value = "1000" name ="foundationheight"></td></tr>
+		</table><h2>For Felt analysis</h2><h3>Nodal Data</h3><table>
+		<tr><td>Nodes must be fixed only </td></tr>
+		<tr><td>foundationnodes</td><td> <input type="text" value = "fixed" name ="foundationnodes"></td></tr>
+		</table><h3>Material Data</h3><table>
+		<tr><td>Beam Material</td><td> <input type="text" value = "steel" name ="materialforbeam"></td></tr>
+		<tr><td>column Material</td><td> <input type="text" value = "steel" name ="materialforcolumn"></td></tr>
+		<tr><td>For Beam</td></tr>
+		<tr><td>ix</td><td> <input type="text" value = "100" name ="ix"></td></tr>
+		<tr><td>e</td><td> <input type="text" value = "2.11E+9" name ="e"></td></tr>	
+		<tr><td>a</td><td> <input type="text" value = "10.0" name ="a"></td></tr>
+		<tr><td>For Column</td></tr>
+		<tr><td>ix</td><td> <input type="text" value = "100" name ="colix"></td></tr>
+		<tr><td>e</td><td> <input type="text" value = "2.11e+9" name ="cole"></td></tr>	
+		<tr><td>a</td><td> <input type="text" value = "10.0" name ="cola"></td></tr>
+		<tr><td>iy</td><td> <input type="text" value = "100" name ="iy"></td></tr>
+		<tr><td>iz</td><td> <input type="text" value = "100" name ="iz"></td></tr>
+		</table><h3>Load Data</h3><table>
+		<tr><td>Length Side Load Direction</td><td> <input type="text" value = "localx" name ="lslloaddir"></td></tr>
+		<tr><td>Width side Load Direction</td><td> <input type="text" value = "localy" name ="wslloaddir"></td></tr>
+		<tr><td>g</td><td> <input type="text" value = "100" name ="g"></td></tr>
+		<tr><td>j</td><td> <input type="text" value = "100" name ="j"></td></tr>
+		<tr><td>Length Wise Weight</td><td> <input type="text" value = "5000" name ="lengthwiseweight"></td></tr>
+		<tr><td>Width Wise Weight</td><td> <input type="text" value = "3000" name ="widthwiseweight"></td></tr>
+		<table>
+		<input type="submit" value="Move to next process">
+	</form>
+	</center>
+</body>
+</html>

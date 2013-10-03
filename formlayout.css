@@ -1,0 +1,19 @@
+body {
+  background-color: #eaeaea;
+}
+input {
+
+}
+/*
+h1 { color : #3300FF }
+
+td {
+	color : #00FFFF;
+
+}*/
+
+button #submit {
+	border-radius : 2px;
+	background-color : cyan;
+	color : white;
+}
